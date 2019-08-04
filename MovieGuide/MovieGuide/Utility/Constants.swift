@@ -10,4 +10,7 @@ import Foundation
 
 public class Constants {
     static let splashTime = 3.0
+    static let minimumFetchInterval: TimeInterval = 0
+    static let expirationDuration = 3600
+
 }

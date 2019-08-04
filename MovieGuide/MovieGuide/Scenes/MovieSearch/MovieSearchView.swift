@@ -22,9 +22,9 @@ final class MovieSearchView: UIView {
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
-    private let sectionInsets = UIEdgeInsets(top: 12.0,
+    private let sectionInsets = UIEdgeInsets(top: 6.0,
                                              left: 12.0,
-                                             bottom: 12.0,
+                                             bottom: 6.0,
                                              right: 12.0)
     private let itemsPerRow: CGFloat = 3
 }
@@ -92,7 +92,7 @@ extension MovieSearchView: UICollectionViewDelegateFlowLayout {
         let availableWidth = self.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        return CGSize(width: widthPerItem, height: widthPerItem * 4/3)
     }
     
     //3

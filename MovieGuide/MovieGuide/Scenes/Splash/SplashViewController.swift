@@ -13,6 +13,7 @@ import Alamofire
 
 class SplashViewController: UIViewController {
     
+    var remoteConfig: RemoteConfig!
     let network = NetworkReachabilityManager()!
     @IBOutlet weak var messageLbl: UILabel!
     let service: MovieServiceProtocol = MovieService()
@@ -20,36 +21,37 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         
         guard network.isReachable else {
-            showAlert()
+            showAlert(with: "No Connection!")
             return
         }
-        
-        fetchMessages()
+        setupRemoteConfing()
+        fetchMessage()
         
     }
     
-    func showAlert(){
-        let networkAlert = UIAlertController(title: "No connection!", message: nil, preferredStyle: .alert)
-        networkAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(networkAlert, animated: true, completion: nil)
+    func setupRemoteConfing(){
+        remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = Constants.minimumFetchInterval
+        remoteConfig.configSettings = settings
     }
-    
-    func fetchMessages(){
-        let fetchDuration: TimeInterval = 0
-        RemoteConfig.remoteConfig().fetch(withExpirationDuration: fetchDuration) { status, error in
-            
-            if let error = error {
-                print("Uh-oh. Got an error fetching remote values \(error)")
-                return
+
+    func fetchMessage(){
+        remoteConfig.fetch(withExpirationDuration: TimeInterval(Constants.expirationDuration)) { (status, error) -> Void in
+            if status == .success {
+                print("Config fetched!")
+                self.remoteConfig.activate(completionHandler: { (error) in
+                    // ...
+                })
+            } else {
+                print("Config not fetched")
+                print("Error: \(error?.localizedDescription ?? "No error available.")")
             }
-            
-            RemoteConfig.remoteConfig().activate()
-            self.updateMessage()
-            print("Retrieved values from the cloud!")
+            self.showMessage()
         }
     }
     
-    func updateMessage(){
+    func showMessage(){
         if let message = RemoteConfig.remoteConfig().configValue(forKey: "message").stringValue, message.count > 0 {
             messageLbl.text = message
             openMovieSearchScreen()

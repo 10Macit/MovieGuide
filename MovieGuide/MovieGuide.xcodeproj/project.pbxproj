@@ -34,6 +34,7 @@
 		73F1754222F73D44002EFAC1 /* MovieGuideAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F1754122F73D44002EFAC1 /* MovieGuideAPI.framework */; };
 		73F1754422F74322002EFAC1 /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1754322F74322002EFAC1 /* UIView+Blur.swift */; };
 		73F1754822F757EB002EFAC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1754722F757EB002EFAC1 /* Constants.swift */; };
+		73F1754C22F76690002EFAC1 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1754B22F76690002EFAC1 /* UIViewController+Alert.swift */; };
 		841F2B68A562CFA92BFD5094 /* Pods_MovieGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227C3ACFCD99E41F393DC525 /* Pods_MovieGuide.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		73F1754122F73D44002EFAC1 /* MovieGuideAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovieGuideAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F1754322F74322002EFAC1 /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		73F1754722F757EB002EFAC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		73F1754B22F76690002EFAC1 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		F8FC4A9BF1AF2F15903EB853 /* Pods-MovieGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGuide.debug.xcconfig"; path = "Target Support Files/Pods-MovieGuide/Pods-MovieGuide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +255,7 @@
 			children = (
 				73F1753B22F732B7002EFAC1 /* UIView+Gradient.swift */,
 				73F1754322F74322002EFAC1 /* UIView+Blur.swift */,
+				73F1754B22F76690002EFAC1 /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				73F1753122F731A8002EFAC1 /* MovieDetailBuilder.swift in Sources */,
 				73F1752322F730F6002EFAC1 /* MovieSearchBuilder.swift in Sources */,
 				73F1752122F730ED002EFAC1 /* MovieSearchView.swift in Sources */,
+				73F1754C22F76690002EFAC1 /* UIViewController+Alert.swift in Sources */,
 				73F1753E22F732D8002EFAC1 /* MovieDetailViewController.swift in Sources */,
 				73F1751D22F730CF002EFAC1 /* MovieSearchContracts.swift in Sources */,
 				73F1753322F731B6002EFAC1 /* MovieDetailView.swift in Sources */,

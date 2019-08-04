@@ -19,8 +19,13 @@ final class AppRouter{
     func start(){
         let viewController = SplashBuilder.make()
       
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.backgroundColor = .white
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().tintColor = UIColor.black
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
         
-        window.rootViewController = viewController
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
 }
