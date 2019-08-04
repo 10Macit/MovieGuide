@@ -9,10 +9,10 @@
 import Foundation
 
 
-public class Constant {
+public class ApiConstant {
     
     static let baseURL = "omdbapi.com"
-    static let apiKey = "a145db2f"
+    public static let apiKey = "a145db2f"
     
 }
 

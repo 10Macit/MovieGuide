@@ -25,11 +25,11 @@ public class MovieService: MovieServiceProtocol {
     public init() {}
     
     public func fetchSearchMovies(params: [String: String], completion: @escaping (Result<Search, Error>) -> Void) {
-        Service.performRequest(route: ApiRouter.movieSearch(params: params), completion: completion)
+        Service.performRequest(route: ApiRouter.movieSearch(items: params), completion: completion)
     }
     
     public func fetchMovieDetail(params: [String: String], completion: @escaping (Result<Movie, Error>) -> Void) {
-        Service.performRequest(route: ApiRouter.movieDetail(params: params), completion: completion)
+        Service.performRequest(route: ApiRouter.movieDetail(items: params), completion: completion)
     }
 }
 
