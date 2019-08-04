@@ -17,14 +17,10 @@ final class AppRouter{
     }
     
     func start(){
-        let viewController = MovieSearchBuilder.make()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.backgroundColor = .white
-        UINavigationBar.appearance().barTintColor = .white
-        UINavigationBar.appearance().tintColor = UIColor.black
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
+        let viewController = SplashBuilder.make()
+      
         
-        window.rootViewController = navigationController
+        window.rootViewController = viewController
         window.makeKeyAndVisible()
     }
 }

@@ -7,43 +7,80 @@
 //
 
 import UIKit
+import FirebaseRemoteConfig
 import MovieGuideAPI
+import Alamofire
 
 class SplashViewController: UIViewController {
     
+    let network = NetworkReachabilityManager()!
+    @IBOutlet weak var messageLbl: UILabel!
     let service: MovieServiceProtocol = MovieService()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getMovieList(searchText: "Bat")
-        // Do any additional setup after loading the view.
+        guard network.isReachable else {
+            showAlert()
+            return
+        }
+        
+        
+        fetchMessages()
+        
     }
     
-    func getMovieList(searchText:String){
-        service.fetchSearchMovies(params: ["s" : searchText,
-                                           "type": "movie",
-                                           "page": "1",
-                                           "apiKey":"a145db2f"])
-        { [weak self] (result) in
-            guard let self = self else { return }
-            switch result {
-            case .success(let value):
-                print(result)
-            case .failure(let error):
-                print(error)
+    func showAlert(){
+        let networkAlert = UIAlertController(title: "No connection!", message: nil, preferredStyle: .alert)
+        networkAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(networkAlert, animated: true, completion: nil)
+    }
+ 
+    func fetchMessages(){
+            let fetchDuration: TimeInterval = 0
+            RemoteConfig.remoteConfig().fetch(withExpirationDuration: fetchDuration) { status, error in
+                
+                if let error = error {
+                    print("Uh-oh. Got an error fetching remote values \(error)")
+                    return
+                }
+                
+                RemoteConfig.remoteConfig().activate()
+                self.updateMessage()
+                print("Retrieved values from the cloud!")
+            }
+    }
+    
+//    func fetchMessages(completion: @escaping (Result<Bool,Swift.Error>) ->Void) {
+//        let fetchDuration: TimeInterval = 0
+//        RemoteConfig.remoteConfig().fetch(withExpirationDuration: fetchDuration) { status, error in
+//
+//            if let error = error {
+//                completion(.failure(error))
+//                print("Uh-oh. Got an error fetching remote values \(error)")
+//                return
+//            }
+//
+//            RemoteConfig.remoteConfig().activate()
+//            completion(.success(true))
+//            self.updateMessage()
+//            print("Retrieved values from the cloud!")
+//        }
+//    }
+    
+    func updateMessage(){
+        if let message = RemoteConfig.remoteConfig().configValue(forKey: "message").stringValue, message.count > 0 {
+            messageLbl.text = message
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.splashTime) {
+                self.openMovieSearchScreen()
             }
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func openMovieSearchScreen(){
+        let movieSearchViewController = MovieSearchBuilder.makeNavigationController(viewController: MovieSearchBuilder.make())
+        show(movieSearchViewController, sender: nil)
     }
-    */
+
+    
 
 }

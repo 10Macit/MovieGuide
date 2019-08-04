@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4zG-xq-hzC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,13 +13,28 @@
         <!--Splash View Controller-->
         <scene sceneID="fh0-jb-iMd">
             <objects>
-                <viewController id="4zG-xq-hzC" customClass="SplashViewController" customModule="MovieGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="4zG-xq-hzC" customClass="SplashViewController" customModule="MovieGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QLJ-Ws-7e6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ni0-BG-NHs">
+                                <rect key="frame" x="171.5" y="430" width="71" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ni0-BG-NHs" firstAttribute="centerY" secondItem="QLJ-Ws-7e6" secondAttribute="centerY" id="kdc-Th-XNn"/>
+                            <constraint firstItem="ni0-BG-NHs" firstAttribute="centerX" secondItem="QLJ-Ws-7e6" secondAttribute="centerX" id="szw-Co-XFO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BXM-Kz-Y4A"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLbl" destination="ni0-BG-NHs" id="SeS-KN-fEz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONQ-8h-a8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

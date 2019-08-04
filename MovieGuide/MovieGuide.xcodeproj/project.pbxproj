@@ -33,6 +33,7 @@
 		73F1753E22F732D8002EFAC1 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1753D22F732D8002EFAC1 /* MovieDetailViewController.swift */; };
 		73F1754222F73D44002EFAC1 /* MovieGuideAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F1754122F73D44002EFAC1 /* MovieGuideAPI.framework */; };
 		73F1754422F74322002EFAC1 /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1754322F74322002EFAC1 /* UIView+Blur.swift */; };
+		73F1754822F757EB002EFAC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1754722F757EB002EFAC1 /* Constants.swift */; };
 		841F2B68A562CFA92BFD5094 /* Pods_MovieGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227C3ACFCD99E41F393DC525 /* Pods_MovieGuide.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		73F1753D22F732D8002EFAC1 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		73F1754122F73D44002EFAC1 /* MovieGuideAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovieGuideAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F1754322F74322002EFAC1 /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
+		73F1754722F757EB002EFAC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F8FC4A9BF1AF2F15903EB853 /* Pods-MovieGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGuide.debug.xcconfig"; path = "Target Support Files/Pods-MovieGuide/Pods-MovieGuide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				73F1753A22F732A7002EFAC1 /* Extensions */,
+				73F1754722F757EB002EFAC1 /* Constants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				73F1753522F7320D002EFAC1 /* SplashBuilder.swift in Sources */,
 				73F1753722F73216002EFAC1 /* AppContainer.swift in Sources */,
 				73F1751F22F730DC002EFAC1 /* MovieSearchPresentation.swift in Sources */,
+				73F1754822F757EB002EFAC1 /* Constants.swift in Sources */,
 				73F1752522F73102002EFAC1 /* MovieSearchViewController.swift in Sources */,
 				73F1754422F74322002EFAC1 /* UIView+Blur.swift in Sources */,
 				73F1752922F73143002EFAC1 /* MovieSearchCell.swift in Sources */,
