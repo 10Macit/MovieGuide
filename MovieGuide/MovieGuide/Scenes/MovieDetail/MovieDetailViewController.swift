@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import MovieGuideAPI
 
 final class MovieDetailViewController: UIViewController {
@@ -26,10 +27,15 @@ final class MovieDetailViewController: UIViewController {
             case .success(let value):
                 self.movieDetailView.updateMovieDetail(MovieDetailPresentation(movie: value))
                 print(result)
+                self.logMovieDetail(with: value)
             case .failure(let error):
                 print(error)
             }
             self.movieDetailView.setLoading(false)
         }
+    }
+    
+    func logMovieDetail(with movie: Movie){
+        Analytics.logEvent("movie_detail", parameters: movie.asDictionary)
     }
 }

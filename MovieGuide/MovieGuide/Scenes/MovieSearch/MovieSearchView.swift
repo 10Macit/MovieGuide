@@ -21,6 +21,12 @@ final class MovieSearchView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
+    private let sectionInsets = UIEdgeInsets(top: 12.0,
+                                             left: 12.0,
+                                             bottom: 12.0,
+                                             right: 12.0)
+    private let itemsPerRow: CGFloat = 3
 }
 
 extension MovieSearchView: MovieSearchViewProtocol {
@@ -71,5 +77,35 @@ extension MovieSearchView: UICollectionViewDataSource {
 extension MovieSearchView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.didSelect(at: indexPath.row)
+    }
+}
+
+
+extension MovieSearchView: UICollectionViewDelegateFlowLayout {
+  
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //2
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = self.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    //3
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    // 4
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
     }
 }

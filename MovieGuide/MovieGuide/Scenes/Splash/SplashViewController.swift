@@ -24,7 +24,6 @@ class SplashViewController: UIViewController {
             return
         }
         
-        
         fetchMessages()
         
     }
@@ -34,53 +33,33 @@ class SplashViewController: UIViewController {
         networkAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(networkAlert, animated: true, completion: nil)
     }
- 
-    func fetchMessages(){
-            let fetchDuration: TimeInterval = 0
-            RemoteConfig.remoteConfig().fetch(withExpirationDuration: fetchDuration) { status, error in
-                
-                if let error = error {
-                    print("Uh-oh. Got an error fetching remote values \(error)")
-                    return
-                }
-                
-                RemoteConfig.remoteConfig().activate()
-                self.updateMessage()
-                print("Retrieved values from the cloud!")
-            }
-    }
     
-//    func fetchMessages(completion: @escaping (Result<Bool,Swift.Error>) ->Void) {
-//        let fetchDuration: TimeInterval = 0
-//        RemoteConfig.remoteConfig().fetch(withExpirationDuration: fetchDuration) { status, error in
-//
-//            if let error = error {
-//                completion(.failure(error))
-//                print("Uh-oh. Got an error fetching remote values \(error)")
-//                return
-//            }
-//
-//            RemoteConfig.remoteConfig().activate()
-//            completion(.success(true))
-//            self.updateMessage()
-//            print("Retrieved values from the cloud!")
-//        }
-//    }
+    func fetchMessages(){
+        let fetchDuration: TimeInterval = 0
+        RemoteConfig.remoteConfig().fetch(withExpirationDuration: fetchDuration) { status, error in
+            
+            if let error = error {
+                print("Uh-oh. Got an error fetching remote values \(error)")
+                return
+            }
+            
+            RemoteConfig.remoteConfig().activate()
+            self.updateMessage()
+            print("Retrieved values from the cloud!")
+        }
+    }
     
     func updateMessage(){
         if let message = RemoteConfig.remoteConfig().configValue(forKey: "message").stringValue, message.count > 0 {
             messageLbl.text = message
-            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.splashTime) {
-                self.openMovieSearchScreen()
-            }
+            openMovieSearchScreen()
         }
     }
     
     func openMovieSearchScreen(){
-        let movieSearchViewController = MovieSearchBuilder.makeNavigationController(viewController: MovieSearchBuilder.make())
-        show(movieSearchViewController, sender: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.splashTime) {
+            let movieSearchViewController = MovieSearchBuilder.makeNavigationController(viewController: MovieSearchBuilder.make())
+            self.show(movieSearchViewController, sender: nil)
+        }
     }
-
-    
-
 }
