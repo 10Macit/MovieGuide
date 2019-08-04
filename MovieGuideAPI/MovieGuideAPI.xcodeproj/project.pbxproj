@@ -11,6 +11,11 @@
 		73F174B422F7164F002EFAC1 /* MovieGuideAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F174AA22F7164F002EFAC1 /* MovieGuideAPI.framework */; };
 		73F174B922F7164F002EFAC1 /* MovieGuideAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F174B822F7164F002EFAC1 /* MovieGuideAPITests.swift */; };
 		73F174BB22F7164F002EFAC1 /* MovieGuideAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 73F174AD22F7164F002EFAC1 /* MovieGuideAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73F174FB22F72667002EFAC1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F174FA22F72667002EFAC1 /* Movie.swift */; };
+		73F174FD22F7266F002EFAC1 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F174FC22F7266F002EFAC1 /* Search.swift */; };
+		73F174FF22F726B0002EFAC1 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F174FE22F726B0002EFAC1 /* MovieService.swift */; };
+		73F1750322F72762002EFAC1 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1750222F72762002EFAC1 /* ApiRouter.swift */; };
+		73F1750622F727B3002EFAC1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1750522F727B3002EFAC1 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +36,11 @@
 		73F174B322F7164F002EFAC1 /* MovieGuideAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieGuideAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F174B822F7164F002EFAC1 /* MovieGuideAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGuideAPITests.swift; sourceTree = "<group>"; };
 		73F174BA22F7164F002EFAC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73F174FA22F72667002EFAC1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		73F174FC22F7266F002EFAC1 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		73F174FE22F726B0002EFAC1 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		73F1750222F72762002EFAC1 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		73F1750522F727B3002EFAC1 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E622CC6F79539ECFD3006D2E /* Pods_MovieGuideAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGuideAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED17031A35BAB9D76894EBBD /* Pods-MovieGuideAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGuideAPI.release.xcconfig"; path = "Target Support Files/Pods-MovieGuideAPI/Pods-MovieGuideAPI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,8 +88,12 @@
 		73F174AC22F7164F002EFAC1 /* MovieGuideAPI */ = {
 			isa = PBXGroup;
 			children = (
+				73F1750422F727A9002EFAC1 /* Utility */,
+				73F174F922F72654002EFAC1 /* DTOs */,
 				73F174AD22F7164F002EFAC1 /* MovieGuideAPI.h */,
 				73F174AE22F7164F002EFAC1 /* Info.plist */,
+				73F174FE22F726B0002EFAC1 /* MovieService.swift */,
+				73F1750222F72762002EFAC1 /* ApiRouter.swift */,
 			);
 			path = MovieGuideAPI;
 			sourceTree = "<group>";
@@ -91,6 +105,23 @@
 				73F174BA22F7164F002EFAC1 /* Info.plist */,
 			);
 			path = MovieGuideAPITests;
+			sourceTree = "<group>";
+		};
+		73F174F922F72654002EFAC1 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				73F174FA22F72667002EFAC1 /* Movie.swift */,
+				73F174FC22F7266F002EFAC1 /* Search.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		73F1750422F727A9002EFAC1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				73F1750522F727B3002EFAC1 /* Constant.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		959594DC2B36977939FA044D /* Frameworks */ = {
@@ -174,6 +205,7 @@
 				TargetAttributes = {
 					73F174A922F7164F002EFAC1 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					73F174B222F7164F002EFAC1 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -245,6 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F174FF22F726B0002EFAC1 /* MovieService.swift in Sources */,
+				73F1750322F72762002EFAC1 /* ApiRouter.swift in Sources */,
+				73F1750622F727B3002EFAC1 /* Constant.swift in Sources */,
+				73F174FB22F72667002EFAC1 /* Movie.swift in Sources */,
+				73F174FD22F7266F002EFAC1 /* Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 113C610A85C4CCF61366F3B4 /* Pods-MovieGuideAPI.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -410,6 +448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.macit.MovieGuideAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -419,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED17031A35BAB9D76894EBBD /* Pods-MovieGuideAPI.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -444,6 +484,7 @@
 		73F174C222F7164F002EFAC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38DX2U22C9;
 				INFOPLIST_FILE = MovieGuideAPITests/Info.plist;
@@ -462,6 +503,7 @@
 		73F174C322F7164F002EFAC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38DX2U22C9;
 				INFOPLIST_FILE = MovieGuideAPITests/Info.plist;

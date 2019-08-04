@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		73F174D122F71673002EFAC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F174D022F71673002EFAC1 /* AppDelegate.swift */; };
 		73F174D822F71675002EFAC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F174D722F71675002EFAC1 /* Assets.xcassets */; };
-		73F174E622F71675002EFAC1 /* MovieGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F174E522F71675002EFAC1 /* MovieGuideTests.swift */; };
 		73F174F122F71F31002EFAC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F174F022F71F31002EFAC1 /* GoogleService-Info.plist */; };
+		73F1751022F72BC5002EFAC1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F1750F22F72BC5002EFAC1 /* Splash.storyboard */; };
+		73F1751222F72BEB002EFAC1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1751122F72BEB002EFAC1 /* SplashViewController.swift */; };
+		73F1751822F72E34002EFAC1 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 73F1751622F72E34002EFAC1 /* Resources */; };
+		73F1751922F72E34002EFAC1 /* MovieGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F1751722F72E34002EFAC1 /* MovieGuideTests.swift */; };
 		841F2B68A562CFA92BFD5094 /* Pods_MovieGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227C3ACFCD99E41F393DC525 /* Pods_MovieGuide.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,9 +35,12 @@
 		73F174D722F71675002EFAC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73F174DC22F71675002EFAC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F174E122F71675002EFAC1 /* MovieGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73F174E522F71675002EFAC1 /* MovieGuideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGuideTests.swift; sourceTree = "<group>"; };
 		73F174E722F71675002EFAC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F174F022F71F31002EFAC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73F1750F22F72BC5002EFAC1 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		73F1751122F72BEB002EFAC1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		73F1751622F72E34002EFAC1 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		73F1751722F72E34002EFAC1 /* MovieGuideTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieGuideTests.swift; sourceTree = "<group>"; };
 		F8FC4A9BF1AF2F15903EB853 /* Pods-MovieGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGuide.debug.xcconfig"; path = "Target Support Files/Pods-MovieGuide/Pods-MovieGuide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +116,8 @@
 		73F174E422F71675002EFAC1 /* MovieGuideTests */ = {
 			isa = PBXGroup;
 			children = (
-				73F174E522F71675002EFAC1 /* MovieGuideTests.swift */,
+				73F1751722F72E34002EFAC1 /* MovieGuideTests.swift */,
+				73F1751622F72E34002EFAC1 /* Resources */,
 				73F174E722F71675002EFAC1 /* Info.plist */,
 			);
 			path = MovieGuideTests;
@@ -127,6 +134,7 @@
 		73F174F322F72315002EFAC1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				73F1750E22F72BAD002EFAC1 /* Splash */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -153,6 +161,15 @@
 				73F174D722F71675002EFAC1 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		73F1750E22F72BAD002EFAC1 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				73F1750F22F72BC5002EFAC1 /* Splash.storyboard */,
+				73F1751122F72BEB002EFAC1 /* SplashViewController.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +227,7 @@
 					};
 					73F174E022F71675002EFAC1 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 73F174CC22F71673002EFAC1;
 					};
 				};
@@ -240,6 +258,7 @@
 			files = (
 				73F174F122F71F31002EFAC1 /* GoogleService-Info.plist in Resources */,
 				73F174D822F71675002EFAC1 /* Assets.xcassets in Resources */,
+				73F1751022F72BC5002EFAC1 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F1751822F72E34002EFAC1 /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F174D122F71673002EFAC1 /* AppDelegate.swift in Sources */,
+				73F1751222F72BEB002EFAC1 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73F174E622F71675002EFAC1 /* MovieGuideTests.swift in Sources */,
+				73F1751922F72E34002EFAC1 /* MovieGuideTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +511,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38DX2U22C9;
 				INFOPLIST_FILE = MovieGuideTests/Info.plist;
@@ -500,6 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.macit.MovieGuideTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieGuide.app/MovieGuide";
@@ -511,6 +534,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38DX2U22C9;
 				INFOPLIST_FILE = MovieGuideTests/Info.plist;

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import MovieGuideAPI
 @testable import MovieGuide
 
 class MovieGuideTests: XCTestCase {
@@ -19,16 +20,34 @@ class MovieGuideTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testParsingSearchResults() throws {
+        let bundle = Bundle(for: MovieGuideTests.self)
+        guard let url = bundle.url(forResource: "search", withExtension: "json") else {
+            fatalError("search_result.json file not found in resources")
         }
+        let data = try Data(contentsOf: url)
+        let result = try JSONDecoder().decode(Search.self, from: data)
+        
+        let movie = result.search[1]
+        XCTAssertEqual(movie.title, "Batman v Superman: Dawn of Justice")
+        XCTAssertEqual(movie.type, "movie")
+        XCTAssertEqual(movie.year, "2016")
+        XCTAssertEqual(movie.imdbId, "tt2975590")
+        XCTAssertEqual(result.totalResults, "366")
+    }
+    
+    func testParsingMovieDetail() throws {
+        let bundle = Bundle(for: MovieGuideTests.self)
+        guard let url = bundle.url(forResource: "movie", withExtension: "json") else {
+            fatalError("Movie.json file not found in resources")
+        }
+        let data = try Data(contentsOf: url)
+        let movie = try JSONDecoder().decode(Movie.self, from: data)
+        
+        XCTAssertEqual(movie.title, "Batman v Superman: Dawn of Justice")
+        XCTAssertEqual(movie.genre, "Action, Adventure, Fantasy, Sci-Fi")
+        XCTAssertEqual(movie.year, "2016")
+        XCTAssertEqual(movie.imdbId, "tt2975590")
     }
 
 }
